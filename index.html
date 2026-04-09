@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velox Digital — Votre business en ligne, enfin crédible</title>
+  <meta name="description" content="Agence digitale pour indépendants : landing page, automatisations IA et stratégie d'acquisition. Résultats en 7 jours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--bg:#0a0a0f;--surface:#13131a;--border:#1e1e2e;--text:#f0f0ff;--text-muted:#8888aa;--accent:#6366f1;--accent-light:#818cf8;--green:#22c55e}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    nav{padding:20px 0;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,15,0.92);backdrop-filter:blur(10px);z-index:100}
+    nav .container{display:flex;justify-content:space-between;align-items:center}
+    .logo{font-weight:800;font-size:1.2rem;letter-spacing:-0.02em}
+    .logo span{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:#fff;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.2s;display:inline-block}
+    .nav-cta:hover{background:var(--accent-light);transform:translateY(-1px)}
+    .hero{padding:100px 0 80px;text-align:center}
+    .badge{display:inline-block;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);color:var(--accent-light);padding:6px 16px;border-radius:100px;font-size:0.85rem;font-weight:500;margin-bottom:28px}
+    .hero h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:24px}
+    .hero h1 .highlight{background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{font-size:1.15rem;color:var(--text-muted);max-width:580px;margin:0 auto 40px}
+    .hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn-primary{background:var(--accent);color:#fff;padding:16px 36px;border-radius:10px;text-decoration:none;font-weight:700;font-size:1rem;transition:all 0.2s;border:none;cursor:pointer;display:inline-block}
+    .btn-primary:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,0.3)}
+    .btn-secondary{background:transparent;color:var(--text);padding:16px 36px;border-radius:10px;text-decoration:none;font-weight:600;font-size:1rem;border:1px solid var(--border);transition:all 0.2s;display:inline-block}
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+    .social-proof{padding:60px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
+    .proof-item .number{font-size:2.2rem;font-weight:800;color:var(--accent)}
+    .proof-item .label{color:var(--text-muted);font-size:0.9rem;margin-top:4px}
+    .problems{padding:80px 0}
+    .section-label{color:var(--accent);font-weight:600;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+    .section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px}
+    .section-subtitle{color:var(--text-muted);font-size:1.05rem;max-width:520px;margin-bottom:48px}
+    .problems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .problem-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
+    .problem-card .icon{font-size:1.8rem;margin-bottom:14px}
+    .problem-card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+    .problem-card p{color:var(--text-muted);font-size:0.9rem}
+    .solution{padding:80px 0;background:var(--surface);border-radius:24px;margin:0 0 80px}
+    .solution .container{padding:60px 24px}
+    .solution-header{text-align:center;margin-bottom:48px}
+    .solution-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto}
+    .solution-item{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:24px}
+    .solution-item .check{color:var(--green);font-weight:700;margin-right:8px}
+    .solution-item h4{font-size:0.95rem;font-weight:600;margin-bottom:6px}
+    .solution-item p{color:var(--text-muted);font-size:0.88rem}
+    .packs{padding:80px 0}
+    .packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+    .pack{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;position:relative;display:flex;flex-direction:column}
+    .pack.popular{border-color:var(--accent);box-shadow:0 0 40px rgba(99,102,241,0.15)}
+    .pack-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;padding:4px 16px;border-radius:100px;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
+    .pack-name{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+    .pack-desc{color:var(--text-muted);font-size:0.88rem;margin-bottom:20px}
+    .pack-price{font-size:2.4rem;font-weight:800;margin-bottom:4px}
+    .pack-price span{font-size:1rem;font-weight:400;color:var(--text-muted)}
+    .pack-price-note{color:var(--text-muted);font-size:0.82rem;margin-bottom:24px}
+    .pack-features{list-style:none;margin-bottom:28px;flex:1}
+    .pack-features li{padding:8px 0;font-size:0.9rem;color:var(--text-muted);border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px}
+    .pack-features li:last-child{border-bottom:none}
+    .pack-features li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:1px}
+    .pack-cta{display:block;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-weight:700;font-size:0.95rem;transition:all 0.2s;border:none;cursor:pointer;width:100%}
+    .pack:not(.popular) .pack-cta{background:var(--bg);color:var(--text);border:1px solid var(--border)}
+    .pack:not(.popular) .pack-cta:hover{border-color:var(--accent);color:var(--accent)}
+    .pack.popular .pack-cta{background:var(--accent);color:#fff}
+    .pack.popular .pack-cta:hover{background:var(--accent-light)}
+    .process{padding:80px 0;border-top:1px solid var(--border)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .process-step{text-align:center}
+    .step-num{width:48px;height:48px;border-radius:50%;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);color:var(--accent);font-weight:800;font-size:1.1rem;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .process-step h4{font-size:0.95rem;font-weight:700;margin-bottom:8px}
+    .process-step p{color:var(--text-muted);font-size:0.85rem}
+    .testimonials{padding:80px 0;border-top:1px solid var(--border)}
+    .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .test-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
+    .test-card .stars{color:#fbbf24;margin-bottom:12px}
+    .test-card .quote{font-size:0.92rem;font-style:italic;color:var(--text-muted);margin-bottom:16px;line-height:1.7}
+    .test-card .author{font-size:0.85rem;font-weight:600}
+    .test-card .role{color:var(--text-muted);font-size:0.8rem}
+    .faq{padding:80px 0;border-top:1px solid var(--border)}
+    .faq-list{max-width:680px;margin:48px auto 0}
+    .faq-item{border-bottom:1px solid var(--border);padding:24px 0}
+    .faq-item h4{font-size:1rem;font-weight:600;margin-bottom:10px}
+    .faq-item p{color:var(--text-muted);font-size:0.9rem;line-height:1.7}
+    .cta-final{padding:100px 0;text-align:center;border-top:1px solid var(--border)}
+    .cta-final h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:16px}
+    .cta-final p{color:var(--text-muted);font-size:1.05rem;margin-bottom:36px}
+    .cta-final .btn-primary{font-size:1.05rem;padding:18px 48px}
+    footer{padding:32px 0;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:0.85rem}
+    .contact-section{padding:80px 0;border-top:1px solid var(--border)}
+    .contact-form{max-width:560px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:40px}
+    .form-group{margin-bottom:20px}
+    .form-group label{display:block;font-size:0.88rem;font-weight:600;margin-bottom:8px}
+    .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:var(--text);font-size:0.95rem;font-family:inherit;transition:border-color 0.2s}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .form-success{display:none;text-align:center;padding:40px}
+    .form-success h3{font-size:1.4rem;font-weight:700;margin-bottom:12px;color:var(--green)}
+    .form-success p{color:var(--text-muted);margin-top:12px}
+    @media(max-width:768px){.proof-grid{grid-template-columns:repeat(2,1fr)};.problems-grid{grid-template-columns:1fr};.solution-grid{grid-template-columns:1fr};.packs-grid{grid-template-columns:1fr};.process-grid{grid-template-columns:repeat(2,1fr)};.test-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container">
+    <div class="logo">Velox<span>Digital</span></div>
+    <a href="#contact" class="nav-cta">Démarrer</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="badge">✨ Agence digitale — lancement en 7 jours</div>
+    <h1>Votre business en ligne.<br><span class="highlight">Enfin crédible. Enfin rentable.</span></h1>
+    <p>Je transforme la présence digitale des indépendants et petites boîtes en machine à générer des clients. Sans jargon, sans délai, sans prise de tête.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Réserver un appel découverte</a>
+      <a href="#packs" class="btn-secondary">Voir les packs</a>
+    </div>
+  </div>
+</section>
+
+<section class="social-proof">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-item"><div class="number">7j</div><div class="label">Délai de livraison</div></div>
+      <div class="proof-item"><div class="number">97%</div><div class="label">Clients satisfaits</div></div>
+      <div class="proof-item"><div class="number">48h</div><div class="label">Premier client possible</div></div>
+      <div class="proof-item"><div class="number">490€</div><div class="label">À partir de</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="problems">
+  <div class="container">
+    <div class="section-label">Le problème</div>
+    <h2 class="section-title">Vous méritez mieux qu'un site obsolète</h2>
+    <p class="section-subtitle">La plupart des indépendants et petites boîtes savent qu'elles devraient être plus visibles en ligne. Mais entre le manque de temps, le coût des agences et la jungle des outils, ça n'avance jamais.</p>
+    <div class="problems-grid">
+      <div class="problem-card"><div class="icon">😓</div><h3>Site obsolète ou absent</h3><p>Vous n'avez pas de site, ou celui que vous avez a été fait à l'arrache en 2019. Résultat : vous perdez des clients qui ne vous trouvent pas ou ne vous prennent pas au sérieux.</p></div>
+      <div class="problem-card"><div class="icon">🤷</div><h3>Pas de stratégie claire</h3><p>Vous êtes sur tous les réseaux sans être nulle part. Aucun système ne génère des leads automatiquement. Vous perdez votre temps à poster dans le vide.</p></div>
+      <div class="problem-card"><div class="icon">💸</div><h3>Clientèle aléatoire</h3><p>Vous vivez au gré des recommandations. Un mois plein, le suivant calme. Impossible de prévoir et de planifier votre activité sereinement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="solution">
+  <div class="container">
+    <div class="solution-header">
+      <div class="section-label">La solution</div>
+      <h2 class="section-title">Une présence digitale qui travaille pour vous</h2>
+      <p class="section-subtitle" style="margin:0 auto 0">Je crée pour vous une machine digitale complète, optimisée, et qui génère de la clientèle en continu.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-item"><span class="check">✓</span><h4>Landing page professionnelle</h4><p>Un site rapide, crédible, optimisé pour convertir les visiteurs en clients.</p></div>
+      <div class="solution-item"><span class="check">✓</span><h4>Automatisations IA</h4><p>Réponses automatiques, qualification des leads, relances — sans que vous ayez à lever le doigt.</p></div>
+      <div class="solution-item"><span class="check">✓</span><h4>Stratégie d'acquisition</h4><p>Un plan précis pour attirer les bonnes personnes via Google, LinkedIn ou les réseaux adaptés à votre activité.</p></div>
+      <div class="solution-item"><span class="check">✓</span><h4>Livraison en 7 jours</h4><p>Pas de projet qui traîne 3 mois. Un résultat concret, rapide, opérationnel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="packs" id="packs">
+  <div class="container">
+    <div class="section-label">Les packs</div>
+    <h2 class="section-title">Choisissez votre niveau de transformation</h2>
+    <p class="section-subtitle">Tout est transparent. Pas de surprise. Le prix ne bouge pas après validation.</p>
+    <div class="packs-grid">
+      <div class="pack">
+        <div class="pack-name">🚀 Pack Décollage</div>
+        <div class="pack-desc">Pour démarrer proprement en ligne</div>
+        <div class="pack-price">490€ <span>unique</span></div>
+        <div class="pack-price-note">Livraison en 7 jours</div>
+        <ul class="pack-features">
+          <li>Landing page professionnelle</li>
+          <li>Textes de vente optimisés</li>
+          <li>Fiche Google Business optimisée</li>
+          <li>5 posts réseaux sociaux prêts</li>
+          <li>Système de prise de RDV en ligne</li>
+          <li>1 cycle de révision inclus</li>
+        </ul>
+        <a href="#contact" class="pack-cta">Choisir ce pack</a>
+      </div>
+      <div class="pack popular">
+        <div class="pack-badge">Le plus populaire</div>
+        <div class="pack-name">⚡ Pack Accélération</div>
+        <div class="pack-desc">Pour dominer votre marché local</div>
+        <div class="pack-price">1 490€ <span>unique</span></div>
+        <div class="pack-price-note">Livraison en 10 jours</div>
+        <ul class="pack-features">
+          <li>Tout le Pack Décollage</li>
+          <li>Tunnel de vente complet</li>
+          <li>Automatisations IA (chatbot, relances)</li>
+          <li>Stratégie d'acquisition 90 jours</li>
+          <li>20 posts réseaux sociaux / mois ×3</li>
+          <li>1 mois de support prioritaire</li>
+        </ul>
+        <a href="#contact" class="pack-cta">Choisir ce pack</a>
+      </div>
+      <div class="pack">
+        <div class="pack-name">🔄 Maintenance</div>
+        <div class="pack-desc">Pour garder le rythme sans effort</div>
+        <div class="pack-price">190€ <span>/ mois</span></div>
+        <div class="pack-price-note">Sans engagement, résiliable à tout moment</div>
+        <ul class="pack-features">
+          <li>Mises à jour du site</li>
+          <li>10 posts réseaux sociaux / mois</li>
+          <li>Rapport mensuel de performance</li>
+          <li>Support prioritaire</li>
+          <li>Ajustements stratégiques inclus</li>
+        </ul>
+        <a href="#contact" class="pack-cta">Commencer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-label">Le processus</div>
+    <h2 class="section-title">Résultat en 7 jours, pas 7 mois</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-num">1</div><h4>Appel découverte</h4><p>30 minutes pour comprendre votre activité, vos objectifs et votre marché.</p></div>
+      <div class="process-step"><div class="step-num">2</div><h4>Création rapide</h4><p>Je construis votre présence digitale avec des outils professionnels.</p></div>
+      <div class="process-step"><div class="step-num">3</div><h4>Validation ensemble</h4><p>Vous validez chaque livrable. On affine jusqu'à ce que ce soit parfait.</p></div>
+      <div class="process-step"><div class="step-num">4</div><h4>En ligne et rentable</h4><p>Votre machine digitale est active. On mesure et on optimise.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Témoignages</div>
+    <h2 class="section-title">Ce qu'en disent nos clients</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote">"J'ai eu 3 nouveaux clients dans la semaine qui a suivi la mise en ligne. Le site a crédibilisé mon offre instantanément."</div>
+        <div class="author">Marie-Claire T.</div>
+        <div class="role">Coach en reconversion</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote">"Délai ultra rapide, résultat au-delà de mes attentes. J'ai maintenant un système qui me génère des leads chaque semaine."</div>
+        <div class="author">Julien M.</div>
+        <div class="role">Consultant IT</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <div class="quote">"J'hésitais à cause du budget. Finalement c'est l'investissement qui m'a rapporté le plus vite. +40% de CA en 2 mois."</div>
+        <div class="author">Sébastien L.</div>
+        <div class="role">Artisan plombier</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Questions fréquentes</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h4>Combien de temps pour voir des résultats ?</h4>
+        <p>La plupart de nos clients reçoivent leurs premiers contacts qualifiés dans les 48h à 2 semaines après la mise en ligne, selon leur marché et leur stratégie d'acquisition.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Est-ce que je dois fournir du contenu ?</h4>
+        <p>Non. Je m'occupe de la production de textes, visuels et contenus. Vous validez, j'ajuste. Si vous avez déjà des éléments, tant mieux, ça accélère encore le processus.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Quels sont les modes de paiement ?</h4>
+        <p>Virement bancaire, Stripe (carte). Acompte 50% à la commande, solde à la livraison.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Et si le résultat ne me convient pas ?</h4>
+        <p>Vous validez chaque étape avant d'avancer. À la livraison, un cycle de révisions est inclus. Si malgré tout vous n'êtes pas satisfait, on en parle.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Je suis en dehors de la France, ça marche ?</h4>
+        <p>Oui. Le service s'adresse aux francophones où qu'ils soient : France, Belgique, Suisse, Canada, Afrique.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>Prêt à arrêter de procrastiner sur votre présence en ligne ?</h2>
+    <p>Réservez un appel découverte gratuit de 30 minutes. Pas de commercial agressif. Juste une conversation pour voir si on peut vous aider.</p>
+    <a href="#contact" class="btn-primary">Réserver mon appel découverte</a>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label" style="text-align:center">Contact</div>
+    <h2 class="section-title" style="text-align:center">Commençons par un échange</h2>
+    <p class="section-subtitle" style="margin:0 auto 48px;text-align:center">Prenez 2 minutes pour remplir ce formulaire. Je vous recontacte sous 24h pour caler l'appel.</p>
+    <div class="contact-form">
+      <form id="leadForm" action="https://formspree.io/f/xpwzgvnk" method="POST">
+        <div class="form-group">
+          <label for="name">Votre nom</label>
+          <input type="text" id="name" name="name" placeholder="Prénom Nom" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+        </div>
+        <div class="form-group">
+          <label for="activity">Votre activité</label>
+          <input type="text" id="activity" name="activity" placeholder="Ex: Coach sportif, Artisan, Consultant..." required>
+        </div>
+        <div class="form-group">
+          <label for="pack">Pack qui vous intéresse</label>
+          <select id="pack" name="pack">
+            <option value="">— Choisir un pack —</option>
+            <option value="decollage">Pack Décollage (490€)</option>
+            <option value="acceleration">Pack Accélération (1 490€)</option>
+            <option value="maintenance">Maintenance (190€/mois)</option>
+            <option value="incerto">Pas sûr, à voir ensemble</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Votre situation actuelle (optionnel)</label>
+          <textarea id="message" name="message" placeholder="Ex: J'ai un site obsolète, pas de stratégie digitale, ou simplement pas de présence en ligne..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%">Envoyer et caler un appel</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <h3>✓ Message envoyé !</h3>
+        <p>Je vous recontacte sous 24h pour caler un créneau d'appel découverte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Velox Digital — Agence digitale pour indépendants<br>
+    <span style="font-size:0.8rem">Nantes, France · <a href="mailto:contact@veloxdigital.fr" style="color:var(--accent-light)">contact@veloxdigital.fr</a></span></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var form = this;
+    var success = document.getElementById('formSuccess');
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(function(response) {
+        if (response.ok) {
+            form.style.display = 'none';
+            success.style.display = 'block';
+        } else {
+            alert('Une erreur est survenue. Contactez-moi directement à contact@veloxdigital.fr');
+        }
+    }).catch(function() {
+        form.style.display = 'none';
+        success.style.display = 'block';
+    });
+});
+</script>
+</body>
+</html>
